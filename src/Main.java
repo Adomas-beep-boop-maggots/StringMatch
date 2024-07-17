@@ -3,26 +3,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Main {
-    static String FindMatchInString_1(String l, String Match) {
+    static String findMatchInString1(String l, String match) {
         char c;
-        int MatchLength = Match.length();
-        int NeedToFind = MatchLength;
-        for (int i = 0; i <= l.length() - MatchLength; i++) {
+        int matchLength = match.length();
+        int needToFind = matchLength;
+        for (int i = 0; i <= l.length() - matchLength; i++) {
             c = l.charAt(i);
-            while ((c == Match.charAt(MatchLength - NeedToFind))) {
-                NeedToFind--;
-                if (NeedToFind == 0) {
+            while ((c == match.charAt(matchLength - needToFind))) {
+                needToFind--;
+                if (needToFind == 0) {
                     return l;
                 }
                 i++;
                 c = l.charAt(i);
             }
-            NeedToFind = MatchLength;
+            needToFind = matchLength;
         }
         return null;
     }
 
-    static String FindMatchInString_2(String l, String Match) {
+    static String findMatchInString2(String l, String Match) {
         if (l.contains(Match)) {
             return l;
         } else {
@@ -32,22 +32,22 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         if (args.length == 0) {
-            System.err.println("Provide at 1 argument.");
+            System.err.println("Provide 1 argument.");
             System.err.println("Usage: StringMatch [String]");
             System.exit(1);
         }
-        String FindThis = args[0];
+        String findThis = args[0];
         BufferedReader inputStream = new BufferedReader(new FileReader("dataset"));
         String l;
-        String f;
+        String findLine;
         try {
             while ((l = inputStream.readLine()) != null) {
 
                 // FindMatchInString implementations:
-                // FindMatchInString_1
-                // FindMatchInString_2
-                if ((f = FindMatchInString_1(l, FindThis)) != null) {
-                    System.out.println("Found it here " + f);
+                // findMatchInString1
+                // findMatchInString2
+                if ((findLine = findMatchInString1(l, findThis)) != null) {
+                    System.out.println("Found it here " + findLine);
                     System.exit(0);
                 }
             }
