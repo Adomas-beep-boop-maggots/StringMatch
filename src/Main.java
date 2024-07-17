@@ -3,9 +3,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Main {
-    static String findMatchInString(String l, String Match) {
-        if (l.contains(Match)) {
-            return l;
+    static String findMatchInString(String line, String Match) {
+        if (line.contains(Match)) {
+            return line;
         } else {
             return null;
         }
@@ -19,11 +19,11 @@ public class Main {
         }
         String findThis = args[0];
         BufferedReader inputStream = new BufferedReader(new FileReader("dataset"));
-        String l;
+        String line;
         String findLine;
         try {
-            while ((l = inputStream.readLine()) != null) {
-                if ((findLine = findMatchInString(l, findThis)) != null) {
+            while ((line = inputStream.readLine()) != null) {
+                if ((findLine = findMatchInString(line, findThis)) != null) {
                     System.out.println("Found it here " + findLine);
                     System.exit(0);
                 }
