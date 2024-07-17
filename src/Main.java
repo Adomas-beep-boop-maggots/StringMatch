@@ -3,8 +3,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Main {
-    static String findMatchInString(String line, String Match) {
-        if (line.contains(Match)) {
+    static String findMatchInString(String line, String match) {
+        if (line.contains(m atch)) {
             return line;
         } else {
             return null;
