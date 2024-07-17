@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
     static String findMatchInString(String line, String match) {
-        if (line.contains(m atch)) {
+        if (line.contains(match)) {
             return line;
         } else {
             return null;
