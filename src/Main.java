@@ -3,12 +3,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Main {
-    static String findMatchInString(String line, String match) {
-        if (line.contains(match)) {
-            return line;
-        } else {
-            return null;
+    static String findMatchInString(String l, String match) {
+        char c;
+        int matchLength = match.length();
+        int needToFind = matchLength;
+        for (int i = 0; i <= l.length() - matchLength; i++) {
+            c = l.charAt(i);
+            while ((c == match.charAt(matchLength - needToFind))) {
+                needToFind--;
+                if (needToFind == 0) {
+                    return l;
+                }
+                i++;
+                c = l.charAt(i);
+            }
+            needToFind = matchLength;
         }
+        return null;
     }
 
     public static void main(String[] args) throws IOException {
